@@ -25,8 +25,8 @@ export const getUserAndRepos = async (login)=>{
 
     const[user, repos] = await Promise.all([
 
-        github.get(`/user/${login}`),
-        github.get(`/repos/${login}/repos`)
+        github.get(`/users/${login}`),
+        github.get(`/users/${login}/repos`)
     ])
 
     return { user: user.data, repos: repos.data }
